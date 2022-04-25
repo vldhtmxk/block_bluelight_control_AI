@@ -5,12 +5,16 @@ package block_blue_light_AI;
  */
 public class Membership {
 	private int[][] function; //계산될 소속함수
-	private int x;//입력값
+	private double x;//입력값
 	private double[] degree; //계산된 소속도 
 	
 	/*입력값과 그에 따른 소속함수를 파라미터로 받아옴*/
 	public Membership(int x, int[][] function) {
 		this.x = x;
+		this.function = function;
+		degree = new double[function.length];
+	}
+	public Membership(int [][] function) {
 		this.function = function;
 		degree = new double[function.length];
 	}
@@ -35,5 +39,8 @@ public class Membership {
 	/*소속도 getter*/
 	public double[] getDegree() {
 		return degree;
+	}
+	public void setInput(double x) {
+		this.x = x;
 	}
 }
